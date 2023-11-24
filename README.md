@@ -15,3 +15,23 @@ O time de prospecção recebe os dados do lead e entra em contato para apresenta
 - Conter ao campo para mudança de status do lead;
 - Consumir uma API Aberta externa como cep aberto e viacep;
 - Não é necessário realizar controle de acesso ou permissão.
+
+### Entidade
+
+EMPRESA
+- nomeEmpresa:String
+- endereco:Endereco
+- email:String
+- telefone:String
+- contatoEmpresa:String
+- observacoes:String
+- status:StatusEnum
+
+ENDERECO
+- logradouro:String
+- numero:String
+- complemento:String
+- cep:String
+- cidade:String
+- UF:String
+
