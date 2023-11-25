@@ -3,11 +3,13 @@ package br.com.wmcodes.back.entidades;
 import java.io.Serializable;
 
 import br.com.wmcodes.back.entidades.enums.StatusEnum;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -35,6 +37,8 @@ public class Empresa implements Serializable{
 	@Column(name = "status", nullable = false)
 	private StatusEnum status;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_endereco", referencedColumnName = "idEndereco")
 	private Endereco endereco;
 	
 	public Empresa() {

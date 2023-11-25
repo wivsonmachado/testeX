@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Endereco implements Serializable{
@@ -27,6 +28,9 @@ public class Endereco implements Serializable{
 	private String cidade;
 	
 	private String uf;
+
+	@OneToOne(mappedBy = "endereco")
+	private Empresa empresa;
 	
 	public Endereco() {
 	}

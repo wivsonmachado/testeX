@@ -29,19 +29,5 @@ public class EmpresaService {
 		empresaRepository.save(empresa);		
 		
 	}
-
-	public long salvarEndereco(Endereco end) {
-		Endereco endereco = new Endereco();
-		endereco.setLogradouro(end.getLogradouro());
-		endereco.setNumero(end.getNumero());
-		endereco.setCep(end.getCep());
-		endereco.setCidade(end.getCidade());
-		endereco.setUf(end.getUf());
-		endereco.setComplemento(end.getComplemento());
-		
-		enderecoRepository.save(endereco);
-		
-		return endereco.getIdEndereco();
-	}
 	
 }
