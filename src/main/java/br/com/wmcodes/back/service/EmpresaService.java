@@ -14,9 +14,6 @@ public class EmpresaService {
 	@Autowired
 	private EmpresaRepository empresaRepository;
 	
-	@Autowired
-	private EnderecoRepository enderecoRepository;
-	
 	public void salvarEmpresa(Empresa emp) {
 		Empresa empresa = new Empresa();
 		empresa.setNomeEmpresa(emp.getNomeEmpresa());
@@ -28,6 +25,10 @@ public class EmpresaService {
 		
 		empresaRepository.save(empresa);		
 		
+	}
+	
+	public void deletarEmpresa(long id) {
+		empresaRepository.deleteById(id);
 	}
 	
 }
